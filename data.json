@@ -1,0 +1,108 @@
+{
+    "Hématologie": [
+      { "nom": "Globules rouges",
+        "homme" :{"min":4.5, "max" : 5.7},
+        "femme" :{"min":4.2, "max" : 5.2},
+        "enfant" :{"min":3.9,"max" : 5.3},
+        "unite": "T/L" },
+
+      { "nom": "Hémoglobine",
+        "homme" :{"min":13, "max" : 17},
+        "femme" :{"min":12, "max" : 16},
+        "enfant" :{"min":11, "max" : 15},
+        "unite": "g/dL" },
+    
+      { "nom": "Hématocrite",
+        "homme" :{"min":40, "max" : 52},
+        "femme" :{"min":37, "max" : 47},
+        "enfant" :{"min":33, "max" : 45},     
+        "unite": "%" },
+
+      { "nom": "Globules blancs",
+        "homme" :{"min":4.0, "max" : 10.0},
+        "femme" :{"min":4.0, "max" : 10.0},
+        "enfant" :{"min":4.0,"max" : 10.0},
+        "unite": "G/L" },
+
+      { "nom": "PN", 
+        "homme" :{"min": 40, "max": 70},
+        "femme" :{"min": 40, "max": 70},
+        "enfant" :{"min": 40, "max": 70},
+        "unite": "%" },
+
+      { "nom": "PE", 
+        "homme" :{"min": 0, "max": 3},
+        "femme" :{"min": 0, "max": 3},
+        "enfant" :{"min": 0, "max": 3},
+        "unite": "%" },
+
+      { "nom": "PB", 
+        "homme" :{"min": 0, "max": 0.5},
+        "femme" :{"min": 0, "max": 0.5},
+        "enfant" :{"min": 0, "max": 0.5},
+        "unite": "%" },
+
+      { "nom": "Lymphocyte", 
+        "homme" :{"min": 20, "max": 40},
+        "femme" :{"min": 20, "max": 40},
+        "enfant" :{"min": 20, "max": 40},
+        "unite": "%" },
+
+      { "nom": "Monocyte", 
+        "homme" :{"min": 2, "max": 10},
+        "femme" :{"min": 2, "max": 10},
+        "enfant" :{"min": 2, "max": 10},
+        "unite": "%" },
+
+      { "nom": "Plaquettes",
+        "homme" :{"min": 150, "max": 450},
+        "femme" :{"min": 150, "max": 450},
+        "enfant" :{"min": 150, "max": 450},
+        "unite": "G/L" }
+    ],
+  
+    "Biochimie": [
+      { "nom": "Glycémie", "min": 0.7, "max": 1.1, "unite": "g/L" },
+      { "nom": "Urée", "min": 0.15, "max": 0.45, "unite": "g/L" },
+      { "nom": "Créatinine", "min": 6, "max": 12, "unite": "mg/L" },
+      { "nom": "Acide urique", "min": 25, "max": 70, "unite": "mg/L" },
+      { "nom": "Cholestérol total", "min": 1.5, "max": 2.0, "unite": "g/L" },
+      { "nom": "Triglycérides", "min": 0.5, "max": 1.5, "unite": "g/L" },
+      { "nom": "ASAT", "min": 5, "max": 40, "unite": "UI/L" },
+      { "nom": "ALAT", "min": 5, "max": 40, "unite": "UI/L" }
+    ],
+  
+    "Sérologie": [
+      { "nom": "VIH", "min": 0, "max": 0, "unite": "Négatif" },
+      { "nom": "Hépatite B", "min": 0, "max": 0, "unite": "Négatif" },
+      { "nom": "Hépatite C", "min": 0, "max": 0, "unite": "Négatif" },
+      { "nom": "Syphilis (VDRL)", "min": 0, "max": 0, "unite": "Négatif" },
+      { "nom": "CRP", "min": 0, "max": 6, "unite": "mg/L" }
+    ],
+  
+    "Parasitologie": [
+      { "nom": "Paludisme", "min": 0, "max": 0, "unite": "Négatif" },
+      { "nom": "Amibes", "min": 0, "max": 0, "unite": "Absence" },
+      { "nom": "Œufs de parasites", "min": 0, "max": 0, "unite": "Absence" }
+    ],
+  
+    "Immunologie": [
+      { "nom": "IgG", "min": 7, "max": 16, "unite": "g/L" },
+      { "nom": "IgM", "min": 0.4, "max": 2.3, "unite": "g/L" },
+      { "nom": "IgA", "min": 0.7, "max": 4.0, "unite": "g/L" }
+    ],
+  
+    "Hormonologie": [
+      { "nom": "TSH", "min": 0.4, "max": 4.0, "unite": "mUI/L" },
+      { "nom": "T3", "min": 1.2, "max": 2.8, "unite": "nmol/L" },
+      { "nom": "T4", "min": 60, "max": 150, "unite": "nmol/L" }
+    ],
+  
+    "Urines": [
+      { "nom": "pH urinaire", "min": 5, "max": 7, "unite": "" },
+      { "nom": "Protéines", "min": 0, "max": 0, "unite": "Absence" },
+      { "nom": "Glucose", "min": 0, "max": 0, "unite": "Absence" },
+      { "nom": "Cétones", "min": 0, "max": 0, "unite": "Absence" }
+    ]
+  }
+  

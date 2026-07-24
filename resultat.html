@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Résultats Laboratoire</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="en-tete">
+    <img src="image/minSAN.png" alt="" width="200px" height="200px">
+  <div class="mdg">
+    <h1>REPOBLIKAN’I MADAGASIKARA</h1>
+    <h2>Fitiavana-Tanindrazana-Fandrosoana</h2>
+    <p>-----------------------</p>
+    <h3>CENTRE HOSPITALIER DE REFERENCE DE DISTRICT DE MAHABO</h3>
+    <p> <em> "Avec vous, pour votre guérison."</em></p>
+    <h4> RESULTAT D’EXAMEN</h4>
+  </div>
+  <img src="image/chrd.png" alt="" width="200px" height="200px">
+</div>
+
+<div class="info-patient">
+  <div class="ligne">
+    <label for="">N° Labo: <input type="text" id="labo" ></label> 
+  </div>
+
+  <div class="ligne">
+    <label for="">Date : <input type="date" style="width: 150px;" id="dateInput"></label> <br>
+  </div>
+
+  <div class="ligne">
+    <label for="">Nom : <input id="nom"  type="text"style="width: 200px;" ></label>
+  </div>
+
+  <div class="ligne">
+    <label for=""> Age : <input type="number" id="age" oninput="afficher()" style="width: 50px;"> <span>ans</span></label> <br>
+  </div>
+
+  <div class="ligne">
+    <label for="">Prénom: <input id="prenom" type="text" style="width: 200px;"></label>
+  </div>
+
+  <div class="ligne">
+    <label for="">Sexe : <select name="sexe" id="sexe" onchange="afficher()">
+      <option value="homme">H</option>
+      <option value="femme">F</option>
+    </select></label> <br>
+  </div>
+ 
+</div>
+
+<div class="ligne" id="prescripteur">
+  <label for="">Médecin prescripteur: <input type="text" style="width: 200px;margin-top: 10px;"></label>
+</div>
+<div class="top-bar">
+  <strong>Choisir domaine :</strong><br>
+
+  <label><input type="checkbox" value="Hémogramme" onchange="afficher()"> Hémogramme(NFS)</label>
+  <label><input type="checkbox" value="Groupage" id="groupageCheck" onchange="afficher()"> Groupage sanguin</label>
+  <label><input type="checkbox" value="Biochimie" onchange="afficher()"> Biochimie</label>
+  <label><input type="checkbox" value="Sérologie" onchange="afficher()"> Sérologie</label>
+  <label><input type="checkbox" value="Parasitologie" onchange="afficher()"> Parasitologie</label>
+</div>
+
+<br>
+
+<table border="1" width="100%" id="table1">
+  <thead>
+    <tr>
+      <th>Analyse</th>
+      <th>Résultat</th>
+      <th>Valeur normale</th>
+      <th>Unité</th>
+    </tr>
+  </thead>
+
+  <tbody id="tbody"></tbody>
+</table>
+
+<div id="groupage-container" style="margin-top: 2px;display: none;">
+  <h3>GROUPAGE SANGUIN</h3>
+
+  <label>
+    Groupe:
+    <select id="groupe" onchange="colorGroupage()">
+      <option value="">--Choisir--</option>
+      <option>A</option>
+      <option>B</option>
+      <option>AB</option>
+      <option>O</option>
+    </select>
+  </label>
+
+  <label>
+    Rhésus: 
+    <select id="rhesus" onchange="colorGroupage()">
+      <option value="">--Choisir--</option>
+      <option value="negatif">Négatif</option>
+      <option value="positif">Positif</option>
+    </select>
+  </label>
+</div>
+
+<div id="parasitologie-container">
+</div>
+
+
+<br>
+<button onclick="exportPDF()" class="no-print"> <span class="emoji"> 📄 </span> Exporter PDF</button>
+
+<div id="renseignements-verso">
+  <h1>Résultats d'analyses</h1>
+
+  <p>N° Labo : <span id="v-labo"></span></p>
+  <p>Date : <span id="v-date"></span></p>
+  <p>Nom : <span id="v-nom"></span></p>
+  <p>Prénom : <span id="v-prenom"></span></p>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
+

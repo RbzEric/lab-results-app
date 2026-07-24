@@ -1,0 +1,243 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    background: #f5f5f5;
+}
+
+h1 {
+    text-align: center;
+}
+
+.en-tete{
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-patient{
+  width: 700px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.ligne label {
+  width: 150px;
+  font-weight: bold;
+}
+
+.ligne input, .ligne select {
+  flex: 1;
+  padding: 5px;
+}
+.top-bar {
+    margin-bottom: 20px;
+}
+
+.emoji {
+  font-size: 18px;
+}
+
+.domaine-Hémogramme{
+  background: rgb(238, 9, 238) !important;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.domaine-Biochimie{
+  background: rgb(6, 100, 37) !important;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.domaine-Sérologie{
+  background: rgb(238, 9, 9) !important;
+  color: #ffffff;
+  font-weight: bold;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th{
+    background: #333;
+    color: white;
+}
+
+td , th {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+input {
+    width: 80px;
+    padding: 2px;
+    text-align: center;
+}
+
+.normal {
+    color: blue;
+    font-weight: bold;
+}
+
+.anormal {
+    color: red;
+    font-weight: bold;
+}
+
+select{
+    padding: 5px;
+}
+
+select.normal{
+    color: blue;
+    font-weight: bold;
+}
+
+select.anormal{
+    color: red;
+    font-weight: bold;
+}
+
+.actions{
+    margin-top: 20px;
+    text-align: center;   
+}
+
+button{
+    padding: 10px 20px;
+    cursor: pointer;
+    background: red;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+#renseignements-verso{
+  display: none;
+}
+/* ====== PRINT PDF FIX ====== */
+@media print {
+
+    /* esorina buttons */
+    .no-print {
+      display: none !important;
+    }
+
+    .hide-print {
+      display: none !important;
+    }
+  
+    /* force couleur ho print */
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+  
+    .en-tete{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+    .en-tete img {
+      width: 100px !important;
+      height: 100px !important;
+    }
+    body {
+      font-size: 12px !important;
+    }
+
+    .mdg h1 {
+      font-size: 14px !important;
+      margin: 2px 0;
+    }
+
+    .mdg h2 {
+      font-size: 12px !important;
+      margin: 2px 0;
+    }
+
+    .mdg h3 {
+      font-size: 12Px !important;
+      margin: 2px 0;
+    }
+
+    .mdg h4 {
+      font-size: 13px;
+      margin: 2px 0;
+    }
+
+    .mdg p {
+      font-size: 10px;
+      margin: 1px 0;
+    }
+
+    .top-bar {
+      display:  none;
+    }
+
+    table {
+      font-size: 11px !important;
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    tr {
+      page-break-inside: avoid;
+    }
+
+    th {
+      font-size: 12px !important;
+      padding: 3px 5px;
+    }
+
+    td {
+      font-size: 11px !important;
+      padding: 3px 5px;
+
+    }
+
+    input {
+      border: none !important;
+      padding: 5px;
+    }
+  
+    select {
+      border: none;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background: none;
+      padding-right: 0;
+    }
+
+    select::-ms-expand {
+      display: none;
+    }
+
+    #parasitologie-container select, 
+    #parasitologie-container input {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    #parasitologie-container div {
+      gap: 0 !important;
+    }
+
+    #parasitologie-container select[style*="display:none"],
+    #parasitologie-container input[style*="display:none"]{
+      display: none !important;
+    }
+
+    #renseignements-verso{
+      display: block;
+      page-break-before: always;
+    }
+
+  }
+
