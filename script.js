@@ -174,7 +174,7 @@ if (domaine === "Parasitologie") {
           </select> <br>
           
           <label> Aspect du selles: </label>
-          <input type = "texte" class ="aspect-selle" placeholder = "Aspect du selle">
+          <input type = "texte" class ="aspect-selle" placeholder = "Aspect du selle" style="width:auto">
           
         </td>
 
@@ -658,7 +658,7 @@ function updateSousGroupe(select) {
     });
 
   });
-
+ 
 }
 
 
@@ -749,7 +749,7 @@ function updateSousGroupe(select) {
 
       if(check && check.checked){
         if(abondance){
-          texte = abondance + " ";
+          texte += abondance + " ";
         }
         texte += label;
         texte += "<br>";
@@ -825,6 +825,20 @@ function updateSousGroupe(select) {
       document.getElementById("groupage-container").classList.add("hide-print");
     }
 
+    // ✅ OBSERVATION
+let observation = document.getElementById("observation").value;
+let obsBlock = document.getElementById("obsBlock");
+
+// 🔥 update height
+  autoResize(obs);
+
+
+if (observation.trim() === "") {
+  obsBlock.style.display = "none";
+} else {
+  obsBlock.style.display = "block";
+}
+
     setTimeout(()=>{
       window.print();
     },300);
@@ -847,7 +861,24 @@ function updateSousGroupe(select) {
       });
 
       document.getElementById("groupage-container").classList.remove("hide-print");
+
+      document.getElementById("obsBlock").style.display = "block";
     };
+
   }
   
   
+function autoResize(textarea) {
+  textarea.style.height = "auto";
+  textarea.style.height = textarea.scrollHeight + "px";
+}
+
+let obs = document.getElementById("observation");
+
+obs.addEventListener("input", function () {
+  autoResize(this);
+});
+
+window.addEventListener("load", function () {
+  autoResize(obs);
+});

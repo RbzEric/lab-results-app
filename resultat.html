@@ -9,16 +9,16 @@
 <body>
 
 <div class="en-tete">
-    <img src="" alt="logo" width="200px" height="200px">
+    <img src="image/minSAN.png" alt="" width="200px" height="200px">
   <div class="mdg">
-    <h1>Grand titre</h1>
-    <h2>Sous titre</h2>
+    <h1>REPOBLIKAN’I MADAGASIKARA</h1>
+    <h2>Fitiavana-Tanindrazana-Fandrosoana</h2>
     <p>-----------------------</p>
-    <h3>NOM DU CENTRE</h3>
-    <p> <em> "Slogan"</em></p>
+    <h3>CENTRE HOSPITALIER DE REFERENCE DE DISTRICT DE MAHABO</h3>
+    <p> <em> "Avec vous, pour votre guérison."</em></p>
     <h4> RESULTAT D’EXAMEN</h4>
   </div>
-  <img src="" alt="logo" width="200px" height="200px">
+  <img src="image/chrd.png" alt="" width="200px" height="200px">
 </div>
 
 <div class="info-patient">
@@ -108,15 +108,28 @@
 
 
 <br>
+
+<br>
+
+<div id="obsBlock">
+  <label style="color: red;">Observation:</label> <br>
+  <textarea id="observation" placeholder="Observation"></textarea>
+</div>
+
+<br>
+
 <button onclick="exportPDF()" class="no-print"> <span class="emoji"> 📄 </span> Exporter PDF</button>
 
 <div id="renseignements-verso">
   <h1>Résultats d'analyses</h1>
 
-  <p>N° Labo : <span id="v-labo"></span></p>
-  <p>Date : <span id="v-date"></span></p>
-  <p>Nom : <span id="v-nom"></span></p>
-  <p>Prénom : <span id="v-prenom"></span></p>
+  <div class="verso">
+    <p>N° Labo : <span id="v-labo"></span></p>
+    <p>Date : <span id="v-date"></span></p>
+    <p>Nom : <span id="v-nom"></span></p>
+    <p>Prénom : <span id="v-prenom"></span></p>
+  </div>
+ 
 </div>
 
 <script src="script.js"></script>

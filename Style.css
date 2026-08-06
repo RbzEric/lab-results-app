@@ -119,6 +119,10 @@ button{
 #renseignements-verso{
   display: none;
 }
+
+textarea {
+  overflow: hidden;
+}
 /* ====== PRINT PDF FIX ====== */
 @media print {
 
@@ -239,5 +243,20 @@ button{
       page-break-before: always;
     }
 
+    .verso {
+      margin: 0 auto;
+      border: 1px solid #000000;
+      width:300px;
+      padding: 20px 20px;
+      font-size:14px
+    }
+
+    textarea {
+    border: none;
+    resize: none;
+    overflow: hidden;
+    page-break-inside: avoid;
+  }
+  
   }
 
