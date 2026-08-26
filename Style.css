@@ -123,6 +123,10 @@ button{
 textarea {
   overflow: hidden;
 }
+
+#bandelette-container tbody select{
+  text-align: center;
+}
 /* ====== PRINT PDF FIX ====== */
 @media print {
 

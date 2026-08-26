@@ -7,20 +7,7 @@
 </head>
 
 <body>
-
-<div class="en-tete">
-    <img src="image/minSAN.png" alt="" width="200px" height="200px">
-  <div class="mdg">
-    <h1>REPOBLIKAN’I MADAGASIKARA</h1>
-    <h2>Fitiavana-Tanindrazana-Fandrosoana</h2>
-    <p>-----------------------</p>
-    <h3>CENTRE HOSPITALIER DE REFERENCE DE DISTRICT DE MAHABO</h3>
-    <p> <em> "Avec vous, pour votre guérison."</em></p>
-    <h4> RESULTAT D’EXAMEN</h4>
-  </div>
-  <img src="image/chrd.png" alt="" width="200px" height="200px">
-</div>
-
+<h1>RESULTAT D'EXAMEN</h1>
 <div class="info-patient">
   <div class="ligne">
     <label for="">N° Labo: <input type="text" id="labo" ></label> 
@@ -62,6 +49,7 @@
   <label><input type="checkbox" value="Biochimie" onchange="afficher()"> Biochimie</label>
   <label><input type="checkbox" value="Sérologie" onchange="afficher()"> Sérologie</label>
   <label><input type="checkbox" value="Parasitologie" onchange="afficher()"> Parasitologie</label>
+  <label><input type="checkbox" value="Bandelette" id="bandeletteCheck" onchange="afficher()">Bandelette Urinaire</label>
 </div>
 
 <br>
@@ -111,6 +99,147 @@
 
 <br>
 
+<!-- CONTAINER BANDELETTE URINAIRE -->
+<div id="bandelette-container" style="display: none; margin-top: 15px;">
+
+   <h3 style="text-align: center;">Bandelette Urinaire</h3>
+    <table border="1">
+        <thead>
+            <tr>
+            <th>Leucocyte</th>
+            <th>Nitrite</th>
+            <th>Urobilinogène</th>
+            <th>Protéine</th>
+            <th>pH</th>
+            <th>Sang</th>
+            <th>Densité</th>
+            <th>Acétone</th>
+            <th>Bilirubine</th>
+            <th>Sucre</th>
+        </tr>
+        </thead>
+        <tbody style="text-align: center;">
+         <tr>
+          <!-- Leucocyte -->
+            <td>
+                <select name="" id="leucocyte" onchange="verifierBandelette(this)" >
+                    <option value="">--Choisir--</option>
+                    <option value="negatif">Négatif</option>
+                    <option value="trace">Trace</option>
+                    <option value="un">+</option>
+                    <option value="deux">++</option>
+                    <option value="trois">+++</option>
+                </select>
+            </td>
+            <!-- Nitrite -->
+            <td>
+                <select name="" id="nitrite" onchange="verifierBandelette(this)">
+                    <option value="">--Choisir--</option>
+                    <option value="negatif">Négatif</option>
+                    <option value="trace">Trace</option>
+                    <option value="un">+</option>
+                    <option value="deux">++</option>
+                    <option value="trois">+++</option>
+                </select>
+            </td>
+            <!-- urobilinogène -->
+            <td>
+                <select name="" id="urobilinogene" onchange="verifierBandelette(this)">
+                    <option value="">--Choisir--</option>
+                    <option value="negatif">Négatif</option>
+                    <option value="trace">Trace</option>
+                    <option value="un">+</option>
+                    <option value="deux">++</option>
+                    <option value="trois">+++</option>
+                </select>
+            </td>
+            <!-- proteine -->
+            <td>
+                <select name="" id="proteine" onchange="verifierBandelette(this)">
+                    <option value="">--Choisir--</option>
+                    <option value="negatif">Négatif</option>
+                    <option value="trace">Trace</option>
+                    <option value="un">+</option>
+                    <option value="deux">++</option>
+                    <option value="trois">+++</option>
+                </select>
+            </td>
+            <!-- pH -->
+            <td>
+                <select name="" id="pH" onchange="verifierBandelette(this)">
+                    <option value="">--Choisir--</option>
+                    <option value="">5.0</option>
+                    <option value="">6.0</option>
+                    <option value="">6.5</option>
+                    <option value="">7.0</option>
+                    <option value="">7.5</option>
+                    <option value="">8.0</option>
+                    <option value="">8.5</option>
+                </select>
+            </td>
+            <!-- sang -->
+            <td>
+                <select name="" id="sang" onchange="verifierBandelette(this)">
+                    <option value="">--Choisir--</option>
+                    <option value="negatif">Négatif</option>
+                    <option value="trace">Trace</option>
+                    <option value="un">+</option>
+                    <option value="deux">++</option>
+                    <option value="trois">+++</option>
+                </select>
+            </td>
+            <!-- densité -->
+            <td>
+                <select name="" id="densite" onchange="verifierBandelette(this)">
+                    <option value="">--Choisir--</option>
+                    <option value="">1.000</option>
+                    <option value="">1.005</option>
+                    <option value="">1.010</option>
+                    <option value="">1.015</option>
+                    <option value="">1.020</option>
+                    <option value="">1.025</option>
+                    <option value="">1.030</option>
+                </select>
+            </td>
+            <!-- acetone -->
+            <td>
+                <select name="" id="acetone" onchange="verifierBandelette(this)">
+                    <option value="">--Choisir--</option>
+                    <option value="negatif">Négatif</option>
+                    <option value="trace">Trace</option>
+                    <option value="un">+</option>
+                    <option value="deux">++</option>
+                    <option value="trois">+++</option>
+                </select>
+            </td>
+            <!-- bilirubine -->
+            <td>
+                <select name="" id="bilirubine" onchange="verifierBandelette(this)">
+                    <option value="">--Choisir--</option>
+                    <option value="negatif">Négatif</option>
+                    <option value="trace">Trace</option>
+                    <option value="un">+</option>
+                    <option value="deux">++</option>
+                    <option value="trois">+++</option>
+                </select>
+            </td>
+            <!-- sucre -->
+            <td>
+                <select name="" id="sucre" onchange="verifierBandelette(this)">
+                    <option value="">--Choisir--</option>
+                    <option value="negatif">Négatif</option>
+                    <option value="trace">Trace</option>
+                    <option value="un">+</option>
+                    <option value="deux">++</option>
+                    <option value="trois">+++</option>
+                    <option value="quatres">++++</option>
+                </select>
+            </td>
+        </tr>
+        </tbody>
+       
+    </table>
+</div>
 <div id="obsBlock">
   <label style="color: red;">Observation:</label> <br>
   <textarea id="observation" placeholder="Observation"></textarea>

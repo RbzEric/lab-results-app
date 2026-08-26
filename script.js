@@ -83,7 +83,7 @@ let data = {
       { "nom": "ASAT", "min": 5, "max": 40, "unite": "UI/L" },
       { "nom": "ALAT", "min": 5, "max": 40, "unite": "UI/L" }
     ],
-  
+
     "Parasitologie": [
       { "nom": "GE/FM", "min": 0, "max": 0, "unite": "", "options":["P.f","P.m","P.v","P.o"] },
       { "nom": "KAOP", "min": 0, "max": 0, "unite": "" },
@@ -105,8 +105,8 @@ let data = {
   
   function afficher() {
 
-    let tbody = document.getElementById("tbody");
-    let paraContainer = document.getElementById("parasitologie-container");
+   let tbody = document.getElementById("tbody");
+   let paraContainer = document.getElementById("parasitologie-container");
   
     // Nettoyage
     tbody.innerHTML = "";
@@ -114,6 +114,7 @@ let data = {
   
     let sexe = document.getElementById("sexe").value;
     let age = parseInt(document.getElementById("age").value);
+
   
     let checkboxes = document.querySelectorAll("input[type=checkbox]:checked");
   
@@ -122,6 +123,8 @@ let data = {
       let domaine = cb.value;
 
       if(!data[domaine])return;
+
+
   // 🔴 CAS PARASITOLOGIE
 if (domaine === "Parasitologie") {
 
@@ -357,11 +360,13 @@ tr.innerHTML = `
     // GROUPAGE SANGUIN
     let groupage = document.getElementById("groupageCheck").checked;
       document.getElementById("groupage-container").style.display = groupage?"block":"none";
-     console.log(document.getElementById("groupageCheck"));
 
+       // BANDELETTE URINAIRE
+  let bandeletteUrinaire = document.getElementById("bandeletteCheck").checked;
+      document.getElementById("bandelette-container").style.display = bandeletteUrinaire?"block":"none";  
   
   }
-  
+
 
   // NORMAL / ANORMAL
   function verifierInput(input, min, max, type = "interval") {
@@ -659,6 +664,34 @@ function updateSousGroupe(select) {
 
   });
  
+}
+
+function verifierBandelette(select) {
+
+  const valeur = select.value;
+
+  // Négatif sy Trace = BLEU
+  if (valeur === "negatif" || valeur === "trace") {
+    select.style.color = "blue";
+    select.style.fontWeight = "bold";
+  }
+
+  // +, ++, +++ , ++++ = ROUGE
+  else if (
+    valeur === "un" ||
+    valeur === "deux" ||
+    valeur === "trois" ||
+    valeur === "quatres"
+  ) {
+    select.style.color = "red";
+    select.style.fontWeight = "bold";
+  }
+
+  // --Choisir--
+  else {
+    select.style.color = "black";
+    select.style.fontWeight = "normal";
+  }
 }
 
 
